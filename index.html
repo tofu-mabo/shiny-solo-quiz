@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#100b16" />
+    <meta
+      name="description"
+      content="283 PRODUCTION Solo Live Collection -Master ShowPiece- のステッカー画像からアイドルを当てる4択クイズ。"
+    />
+    <title>SOLO SONG VISUAL QUIZ｜シャニマス</title>
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23100b16'/%3E%3Cpath d='M32 8l5.8 17.4L56 32l-18.2 6.6L32 56l-5.8-17.4L8 32l18.2-6.6z' fill='%23ff4dc8'/%3E%3Ccircle cx='32' cy='32' r='7' fill='%23efff5b'/%3E%3C/svg%3E"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./app.js" defer></script>
+  </head>
+  <body>
+    <div class="ambient ambient--one" aria-hidden="true"></div>
+    <div class="ambient ambient--two" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a class="brand" href="./" aria-label="クイズの最初に戻る">
+        <span class="brand__mark" aria-hidden="true">✦</span>
+        <span>
+          <strong>SOLO SONG</strong>
+          <small>VISUAL QUIZ</small>
+        </span>
+      </a>
+      <p class="eyebrow">MASTER SHOWPIECE / 28 IDOLS</p>
+    </header>
+
+    <main class="game-shell">
+      <section class="game-card" aria-labelledby="game-title">
+        <div class="game-topbar">
+          <div>
+            <p class="kicker">このステッカーは誰のソロ曲？</p>
+            <h1 id="game-title">絵柄からアイドルを当てよう</h1>
+          </div>
+          <div class="mode-switch" aria-label="出題数">
+            <button class="mode-button is-active" type="button" data-mode="10" aria-pressed="true">10問</button>
+            <button class="mode-button" type="button" data-mode="28" aria-pressed="false">全28問</button>
+          </div>
+        </div>
+
+        <div class="progress-row" id="progress-row">
+          <div class="progress-meta">
+            <span>QUESTION <strong id="question-number">01</strong><span aria-hidden="true"> / </span><span class="sr-only">全</span><strong id="question-total">10</strong></span>
+            <span>SCORE <strong id="score">0</strong></span>
+          </div>
+          <div class="progress-track" aria-hidden="true"><span id="progress-bar"></span></div>
+        </div>
+
+        <div class="quiz-layout" id="quiz-layout">
+          <figure class="visual-frame">
+            <span class="tape tape--left" aria-hidden="true"></span>
+            <span class="tape tape--right" aria-hidden="true"></span>
+            <img
+              id="quiz-image"
+              src="./assets/001.jpg"
+              alt="ソロ曲をイメージしたステッカーデザイン"
+              width="500"
+              height="500"
+            />
+            <figcaption>公式ステッカーのデザインをよく見て答えてください</figcaption>
+          </figure>
+
+          <div class="answer-panel">
+            <div class="answer-heading">
+              <span class="answer-heading__number" id="large-number" aria-hidden="true">01</span>
+              <div>
+                <p>WHOSE SONG?</p>
+                <h2>このアイドルは誰？</h2>
+              </div>
+            </div>
+            <div class="choices" id="choices" role="group" aria-label="回答の選択肢"></div>
+
+            <div class="feedback" id="feedback" aria-live="polite" hidden>
+              <div>
+                <p class="feedback__status" id="feedback-status"></p>
+                <p class="feedback__answer"><strong id="correct-name"></strong><span id="correct-unit"></span></p>
+              </div>
+              <a id="source-link" href="#" target="_blank" rel="noreferrer">商品ページ ↗</a>
+            </div>
+
+            <button class="next-button" id="next-button" type="button" hidden>
+              <span id="next-label">次の問題へ</span><span aria-hidden="true">→</span>
+            </button>
+            <p class="key-hint">キーボードの <kbd>1</kbd>〜<kbd>4</kbd> でも回答できます</p>
+          </div>
+        </div>
+
+        <section class="result" id="result" hidden aria-live="polite">
+          <p class="result__eyebrow">QUIZ COMPLETE</p>
+          <div class="result__score"><strong id="final-score">0</strong><span id="final-total">/ 10</span></div>
+          <h2 id="result-title">ナイスチャレンジ！</h2>
+          <p id="result-message"></p>
+          <button class="restart-button" id="restart-button" type="button">もう一度挑戦する <span aria-hidden="true">↻</span></button>
+        </section>
+      </section>
+
+      <aside class="about">
+        <p><strong>ABOUT</strong> 28名のソロ曲をモチーフにしたステッカーの絵柄だけで、アイドルを当てる非公式ファンクイズです。</p>
+        <p>出典：<a href="https://shop.asobistore.jp/s/products/detail/249786-5_sc-c018-00-00" target="_blank" rel="noreferrer">ASOBI STORE 商品ページ</a></p>
+      </aside>
+    </main>
+
+    <footer>
+      <span>UNOFFICIAL FAN QUIZ</span>
+      <span>THE IDOLM@STER™&amp; ©Bandai Namco Entertainment Inc.</span>
+    </footer>
+  </body>
+</html>
